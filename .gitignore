@@ -24,3 +24,4 @@ build/
 # All environment files except safe templates
 .env
 .env.*
+!.env.example
