@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Clone — Music, Streamed</title>
+  <meta name="description" content="A full-stack music streaming web application inspired by Spotify.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/player.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="assets/logo.svg" alt="" width="32" height="32">
+        <span>Spotify Clone</span>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#" class="nav-item active" data-view="home">
+          <span class="nav-icon"></span>
+          Home
+        </a>
+        <a href="#" class="nav-item" data-view="search">
+          <span class="nav-icon"></span>
+          Search
+        </a>
+      </nav>
+
+      <div class="library-panel">
+        <div class="library-header">
+          <span class="library-title">
+            <span class="nav-icon"></span>
+            Your Library
+          </span>
+          <button id="createPlaylistBtn" class="icon-btn" aria-label="Create playlist"></button>
+        </div>
+
+        <a href="#" class="nav-item" data-view="liked">
+          <span class="liked-icon">♥</span>
+          Liked Songs
+        </a>
+
+        <ul id="playlistList" class="playlist-list"></ul>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="search-bar">
+          <span class="search-icon"></span>
+          <input type="text" id="searchInput" placeholder="What do you want to play?" autocomplete="off">
+        </div>
+        <div class="user-menu" id="userMenu"></div>
+      </header>
+
+      <div id="viewContainer" class="view-container"></div>
+    </main>
+  </div>
+
+  <!-- ============ PLAYER BAR ============ -->
+  <footer class="player-bar">
+    <div class="now-playing">
+      <div class="cover-art" id="nowPlayingCover"></div>
+      <div class="now-playing-text">
+        <span id="nowPlayingTitle" class="np-title">Nothing playing</span>
+        <span id="nowPlayingArtist" class="np-artist"></span>
+        <a id="nowPlayingAttribution" class="np-attribution" href="#" target="_blank" rel="noopener"></a>
+      </div>
+      <button id="likeBtn" class="icon-btn" aria-label="Like song"></button>
+    </div>
+
+    <div class="player-center">
+      <div class="player-controls">
+        <button id="shuffleBtn" class="icon-btn ctrl-btn" aria-label="Shuffle"></button>
+        <button id="prevBtn" class="icon-btn ctrl-btn" aria-label="Previous"></button>
+        <button id="playPauseBtn" class="icon-btn play-btn" aria-label="Play"></button>
+        <button id="nextBtn" class="icon-btn ctrl-btn" aria-label="Next"></button>
+        <button id="repeatBtn" class="icon-btn ctrl-btn" aria-label="Repeat"></button>
+      </div>
+      <div class="progress-row">
+        <span id="currentTime" class="time-label">0:00</span>
+        <div class="progress-bar" id="progressBar">
+          <div class="progress-fill" id="progressFill"></div>
+          <div class="progress-handle" id="progressHandle"></div>
+        </div>
+        <span id="duration" class="time-label">0:00</span>
+      </div>
+    </div>
+
+    <div class="volume-section">
+      <button id="muteBtn" class="icon-btn" aria-label="Mute"></button>
+      <div class="volume-bar" id="volumeBar">
+        <div class="volume-fill" id="volumeFill"></div>
+      </div>
+    </div>
+  </footer>
+
+  <audio id="audioElement" preload="metadata"></audio>
+
+  <!-- ============ MODAL ============ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Modal</h3>
+        <button id="modalCloseBtn" class="icon-btn" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // fill in the icons that were left blank in the static HTML above
+    document.querySelector('[data-view="home"] .nav-icon').innerHTML = ICONS.home;
+    document.querySelector('[data-view="search"] .nav-icon').innerHTML = ICONS.search;
+    document.querySelector('.library-title .nav-icon').innerHTML = ICONS.library;
+    document.getElementById('createPlaylistBtn').innerHTML = ICONS.plus;
+    document.querySelector('.search-icon').innerHTML = ICONS.search;
+    document.getElementById('modalCloseBtn').innerHTML = ICONS.close;
+  </script>
+  <script src="js/player.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* ============================================================
+   responsive.css — breakpoints for tablet & mobile
+   ============================================================ */
+
+/* ---------- tablet ---------- */
+@media (max-width: 900px) {
+  .app-shell { grid-template-columns: 220px 1fr; }
+  .search-bar { width: 280px; }
+  .detail-header { flex-direction: column; align-items: flex-start; }
+  .cover-xl { width: 140px; height: 140px; font-size: 3.2rem; }
+  .detail-header-text h1 { font-size: 2.2rem; }
+  .volume-section { width: 100px; }
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 640px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+  .sidebar {
+    order: 2;
+    flex-direction: row;
+    height: 64px;
+    padding: 6px;
+    align-items: center;
+  }
+  .sidebar-logo { display: none; }
+  .main-nav { flex-direction: row; flex: 1; margin-bottom: 0; }
+  .nav-item { flex-direction: column; gap: 2px; font-size: 0.65rem; padding: 6px; flex: 1; text-align: center; }
+  .library-panel { display: none; }
+
+  .top-bar { padding: 12px 16px; }
+  .search-bar { width: 100%; max-width: none; }
+  .user-menu .btn-text { display: none; }
+  .view-container { padding: 4px 16px 16px; }
+  .view-title { font-size: 1.5rem; }
+
+  .song-row { grid-template-columns: 32px 1fr auto; }
+  .song-row-album { display: none; }
+  .card-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+
+  .player-bar { grid-template-columns: auto 1fr auto; padding: 8px 12px; height: auto; min-height: 72px; }
+  .now-playing { max-width: 40vw; }
+  .now-playing .cover-art { width: 44px; height: 44px; }
+  #likeBtn { display: none; }
+  .time-label { display: none; }
+  .volume-section { display: none; }
+  .player-controls { gap: 12px; }
+
+  .detail-header { padding: 16px 0; gap: 16px; }
+  .cover-xl { width: 100px; height: 100px; font-size: 2.4rem; }
+  .detail-header-text h1 { font-size: 1.6rem; }
+
+  .modal { width: calc(100vw - 24px); }
+}

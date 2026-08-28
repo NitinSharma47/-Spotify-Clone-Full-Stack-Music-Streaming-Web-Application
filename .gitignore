@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Environment variables (never commit real credentials)
+.env
+
+# Logs
+npm-debug.log*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+
+# Build artifacts (none currently, reserved for future use)
+dist/
+build/
+
+# All environment files except safe templates
+.env
+.env.*

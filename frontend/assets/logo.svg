@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1ED760"/>
+      <stop offset="100%" stop-color="#0B4F2C"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="url(#logoGrad)"/>
+  <circle cx="32" cy="32" r="31" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <!-- three concentric sound-pulse arcs, original composition -->
+  <path d="M20 32a12 12 0 0 1 12-12" fill="none" stroke="#04120A" stroke-width="3.4" stroke-linecap="round" opacity="0.35"/>
+  <path d="M14 32a18 18 0 0 1 18-18" fill="none" stroke="#04120A" stroke-width="3.4" stroke-linecap="round" opacity="0.22"/>
+  <!-- play triangle -->
+  <path d="M26 21 L45 32 L26 43 Z" fill="#04120A"/>
+</svg>
