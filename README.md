@@ -22,11 +22,6 @@ to demonstrate full-stack development skills.
 - **Responsive design** — usable on desktop, tablet, and mobile
 - **137-song catalog** of real, accurately-credited tracks (see [About the catalog](#-about-the-song-catalog--demo-audio) below)
 
-## 🖼 Screenshots
-
-*Run the app locally (see [Setup](#-setup) below) and drop your own screenshots here —
-`home view`, `now playing bar`, `playlist view`, `search results`, `login screen`.*
-
 ## 🧱 Tech Stack & Architecture
 
 | Layer          | Technology                                              |
